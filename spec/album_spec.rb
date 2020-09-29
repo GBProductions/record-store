@@ -2,7 +2,6 @@ require 'rspec'
 require 'album'
 
 describe '#Album' do
-describe '#Album' do
 
 before(:each) do
   Album.clear()
@@ -88,4 +87,11 @@ describe('#update') do
     expect(album.name).to(eq("A Love Supreme"))
   end
 end
+
+describe('.search') do
+  it("searches an album by name") do
+    album = Album.new("Blue", nil)
+    album.save()
+    expect(Album.search("Blue")).to(eq(album))
+  end
 end

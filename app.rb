@@ -49,6 +49,11 @@ patch('/albums/:id') do
   erb(:albums)
 end
 
+get('/albums/:nameSearch') do
+  @albums = Album.search(params[:nameSearch])
+  erb(:albums)
+end
+
 delete('/albums/:id') do
   @album = Album.find(params[:id].to_i())
   @album.delete()
@@ -66,4 +71,3 @@ class Album
 
 
 end
-

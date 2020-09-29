@@ -1,0 +1,15 @@
+<h1>Search Results</1>
+
+<% if @albums.any? %>
+  <ul>
+    <% @albums.each do |album| %>
+      <li><%= album.name %></li>
+    <% end %>
+  </ul>
+
+
+  <h3>Search Result</h3>  
+
+    <% @results.each do |result| %>  
+        <%= result.name %><br>  
+    <% end %>

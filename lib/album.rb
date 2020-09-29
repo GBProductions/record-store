@@ -34,6 +34,14 @@ class Album
     @@albums[id]
   end
 
+  def self.search(name)
+    @@albums.each_pair do |array|
+      if name == array[1].name
+        return array[1]
+      end
+    end
+  end
+
   def update(name)
     @name = name
   end
